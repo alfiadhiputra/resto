@@ -1,0 +1,13 @@
+#Fix Rewrite
+Options -Multiviews
+
+# Mod Rewrite
+Options +FollowSymLinks
+RewriteEngine On
+RewriteBase /resto/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# mengubah "namakamu.com/login.php" menjadi "namakamu.com/login/"
+RewriteRule ^([a-z_]+)\/?$ $1.php [NC]
